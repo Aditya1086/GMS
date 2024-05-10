@@ -3,22 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="./admin_style.css">
-
-    <?php include "./head.php";
-     include "./connect.php";
-    session_start();
-    $admin_id = $_SESSION['admin_id'];
-
-if(!isset($admin_id)){
-   header('location:login.php');
-}
-    ?>
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    
 </head>
 <body>
-  <header class="header" style="position: sticky;">
+    
+<header class="header">
         <a href="" class="logo"><i class="fas fa-shopping-basket"></i> GMS</a>
 
         <nav class="navbar">
@@ -61,65 +54,17 @@ if(!isset($admin_id)){
             <a href="#" class="btn">check out</a>
         </div>
 
-       <!-- login form -->
-               <form class="login-form" id="signin" method="post">
-             <?php
-            echo "<h1>Hello! ".$_SESSION['admin_name']."<h1/>";
-            ?> 
-           <a href="logout.php"  id="logout_btn_link" ><i class="fa-solid fa-power-off" ></i></a>
+        <!-- login form  -->
+        <form action="login.php" class="login-form" id="signin" method="post">
+            <h3>Login Now</h3>
+            <input type="email" placeholder="E Mail" name="mail" class="box" />
+            <input type="password" placeholder="Password" name="pwd" class="box" />
+            <p>forget your password <a href="mailto:adityasri1086@gmail.com">click here</a></p>
+            <p>don't have an account <a href="register.php">create now</a></p>
+            <input type="submit" value="login" class="btn" />
         </form>
 
-    </header> 
-
-    <section class="dashboard">
-
-<h1 class="title">Live dashboard</h1>
-
-<div class="box-container">
-
-<div class="box">
-         <?php 
-            $users = mysqli_query($conn, "SELECT * FROM `user`") or die('query failed');
-            $number_of_users = mysqli_num_rows($users);
-         ?>
-         <h3><?php echo  $number_of_users; ?></h3>
-         <p>Number Of Users </p>
-</div>
-
-<div class="box">
-         <?php 
-            $categories = mysqli_query($conn, "SELECT * FROM `category`") or die('query failed');
-            $number_of_categories = mysqli_num_rows( $categories);
-         ?>
-         <h3><?php echo $number_of_categories; ?></h3>
-         
-         <p>Number Of Categories </p> 
-         
-         
-</div>
-
-<div class="box">
-         <?php 
-            $items = mysqli_query($conn, "SELECT * FROM `items`") or die('query failed');
-            $number_of_items = mysqli_num_rows($items);
-         ?>
-         <h3><?php echo $number_of_items; ?></h3>
-         <p>Number Of Products</p>
-</div>
-   
-
-</div>
-
-</section>
-
-
-
-
-
-  <?php
-// include "./footer.php";
-?>
-<script src="./script.js"></script>
+    </header>
+    <script src="script.js"></script>
 </body>
-
 </html>

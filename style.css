@@ -2,6 +2,7 @@
 :root {
     --green: #50C878;
     --black: #130f40;
+    --red:#dc3545;
     --light-color: #666;
     --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
     --border: 0.2rem solid rgba(0, 0, 0, 0.1);
@@ -45,7 +46,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2rem 9%;
+    padding: 1rem 9%;
     background: #fff;
     box-shadow: var(--box-shadow);
 }
@@ -582,11 +583,11 @@ section {
 /* Registration Form! */
 
 .register {
-    height: 1900px;
+    height: 1700px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 90vh;
     background-image: url('images/bgregister.avif');
     background-size: cover;
     background-position: center;
@@ -594,11 +595,12 @@ section {
 }
 
 .form {
+    margin-top: 10vh;
     display: flex;
     flex-direction: column;
     gap: 10px;
     max-width: 450px;
-    height: 550px;
+    height: 450px;
     padding: 20px;
     border-radius: 1rem;
     position: relative;
@@ -777,4 +779,8 @@ section {
     width: 80%;
     display: flex;
     justify-content: space-evenly;
+}
+
+#logout_btn_link{
+    color: var(--red);
 }

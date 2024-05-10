@@ -1,25 +1,35 @@
 <?php
 include"./connect.php";
-$mobile = $_REQUEST['mobile'];
-$pwd = $_REQUEST['pwd'];
-
-if($mobile === "7235047914" && $pwd==="123456"){
-    header("location:./admindashboard.php");
-}
-else{
-    $query = "SELECT * FROM user WHERE mobile = '$mobile' AND pwd = '$pwd' " ;
+session_start();
 
 
-$result = mysqli_query($conn,$query);
+// if(isset($_REQUEST['submit'])){
 
-if(mysqli_num_rows($result) === 1){
-    $row = mysqli_fetch_assoc($result);
-    if($row['mobile'] === $mobile && $row['pwd']=== $pwd){
-        header("location:./success.html");
-    }
-}
-$row = mysqli_fetch_assoc($result);
-}
+    $email = mysqli_real_escape_string($conn, $_REQUEST['mail']);
+    $pass = mysqli_real_escape_string($conn, ($_REQUEST['pwd']));
+ 
+    $query = mysqli_query($conn, "SELECT * FROM user WHERE mail = '$email' AND pwd = '$pass'") ;
+ 
+    if(mysqli_num_rows($query) > 0){
+ 
+       $row = mysqli_fetch_assoc($query);
+ 
+       if($row['mail'] == 'admin@gms.com'){
+ 
+          $_SESSION['admin_name'] = $row['fname'];
+          $_SESSION['admin_email'] = $row['mail'];
+          $_SESSION['admin_id'] = $row['ID'];
+          header('location:./admindashboard.php');
+ 
+       }else{
+ 
+          $_SESSION['user_name'] = $row['fname'];
+          $_SESSION['user_email'] = $row['mail'];
+          $_SESSION['user_id'] = $row['ID'];
+          header('location:home.php');
+ 
+       }}
+    // }
 
 
 
