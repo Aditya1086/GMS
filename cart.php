@@ -123,7 +123,8 @@
                     <td>5</td>
                     <td>
                         
-                                   <a class="ui-btn1" href="./edit.php">Edit</button></a></i>
+                                  <a href="./edit.php"> <button
+                                    class="ui-btn1">Edit</button></a>
                     </td>
                     <td> <a href="./delete.php"> <button
                                     class="ui-btn">Delete</button></a>
