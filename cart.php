@@ -23,6 +23,7 @@
             align-items: center;
             flex-direction: column;
             font-size: larger;
+            padding-top: 100px;
         }
 
         .ui-btn {
@@ -38,7 +39,7 @@
             text-transform: uppercase;
             border-width: 2px;
             font-weight: 500;
-            font-size: 18px;
+            font-size: 11px;
             letter-spacing: 2px;
         }
 
@@ -49,15 +50,15 @@
             text-shadow: 0 0 50px white, 0 0 20px white, 0 0 15px white;
             box-shadow: 0 0 50px rgb(202, 25, 25), 0 0 30px rgb(202, 25, 25),
                 0 0 60px rgb(202, 25, 25), 0 0 120px rgb(202, 25, 25);
-            font-size: 20px;
-            width: 130px;
-            height: 50px;
+            font-size: 13px;
+            width: 125px;
+            height: 45px;
             letter-spacing: 3px;
         }
 
         .ui-btn:active {
-            width: 115px;
-            height: 38px;
+            width: 110px;
+            height: 36px;
             letter-spacing: 0px;
         }
 
@@ -75,7 +76,7 @@
             text-transform: uppercase;
             border-width: 2px;
             font-weight: 500;
-            font-size: 18px;
+            font-size: 11px;
             letter-spacing: 2px;
         }
 
@@ -86,15 +87,15 @@
             text-shadow: 0 0 50px white, 0 0 20px white, 0 0 15px white;
             box-shadow: 0 0 50px rgb(0, 81, 255), 0 0 30px rgb(0, 81, 255),
                 0 0 60px rgb(0, 81, 255), 0 0 120px rgb(0, 81, 255);
-            font-size: 20px;
-            width: 130px;
-            height: 50px;
+            font-size: 13px;
+            width: 125px;
+            height: 45px;
             letter-spacing: 3px;
         }
 
         .ui-btn1:active {
-            width: 115px;
-            height: 38px;
+            width: 110px;
+            height: 36px;
             letter-spacing: 0px;
         }
     </style>
@@ -107,9 +108,9 @@
 
 <body>
     <div class="main">
-        <h1>Cart</h1>
+        <h1>Cart</h1><br>
         <table>
-            <tr>
+            <tr  bgcolor="#4682B4">
                 <th>Item Name</th>
                 <th>Price</th>
                 <th>Quantity</th>
