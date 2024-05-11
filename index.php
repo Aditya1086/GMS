@@ -120,7 +120,7 @@ include "./head.php";
                 <img src="images/cat-1.png" alt="" style="width: 30rem; padding-top: 6rem" />
                 <h3>vegetables</h3>
                 <p>upto 45% off</p>
-                <a href="vegetable.html" class="btn">shop now</a>
+                <a href="vegetable.php" class="btn">shop now</a>
             </div>
             <div class="box">
                 <img src="images/cat-2.png" alt="" style="width: 30rem" />

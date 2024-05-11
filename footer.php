@@ -12,7 +12,7 @@
 <section class="footer">
         <div class="box-container">
             <div class="box">
-                <h3> Grocery <i class="fa fa-shopping-basket"></i></h3>
+                <h3> GMS <i class="fa fa-shopping-basket"></i></h3>
                 <p>Feel Free To Follow Us On Our Social Media Handlers All The Links Are Given Below.</p>
                 <div class="share">
                     <a href="#" class="fa-brands fa-facebook"></a>
