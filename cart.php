@@ -122,11 +122,11 @@
                     <td>Rs. 100 /KG</td>
                     <td>5</td>
                     <td>
-                        <a href="./edit.php"><i class="fa-regular fa-pen-to-square" style="color: blue;"><button
-                                    class="ui-btn1">Edit</button></a></i>
+                        
+                                   <a class="ui-btn1" href="./edit.php">Edit</button></a></i>
                     </td>
-                    <td> <a href="./delete.php"> <i class="fa-solid fa-trash" style="color: red;"><button
-                                    class="ui-btn">Delete</button></a></i>
+                    <td> <a href="./delete.php"> <button
+                                    class="ui-btn">Delete</button></a>
                     </td>
                 </tr>
         </table>
