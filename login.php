@@ -30,6 +30,9 @@ session_start();
  
        }}
     // }
+    else{
+      header("location:./index.php");
+    }
 
 
 
