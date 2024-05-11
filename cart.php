@@ -46,9 +46,9 @@
             color: rgb(247, 247, 247);
             background-color: rgb(202, 25, 25);
             border-color: rgb(202, 25, 25);
-            text-shadow: 0 0 50px white, 0 0 20px white, 0 0 15px white;
-            box-shadow: 0 0 50px rgb(202, 25, 25), 0 0 30px rgb(202, 25, 25),
-                0 0 60px rgb(202, 25, 25), 0 0 120px rgb(202, 25, 25);
+            text-shadow: 0 0 10px white, 0 0 20px white, 0 0 15px white;
+            box-shadow: 0 0 10px rgb(202, 25, 25), 0 0 10px rgb(202, 25, 25),
+                0 0 20px rgb(202, 25, 25), 0 0 50px rgb(202, 25, 25);
             font-size: 13px;
             width: 125px;
             height: 45px;
@@ -84,8 +84,8 @@
             background-color: rgb(0, 81, 255);
             border-color: rgb(0, 81, 255);
             text-shadow: 0 0 50px white, 0 0 20px white, 0 0 15px white;
-            box-shadow: 0 0 50px rgb(0, 81, 255), 0 0 30px rgb(0, 81, 255),
-                0 0 60px rgb(0, 81, 255), 0 0 120px rgb(0, 81, 255);
+            box-shadow: 0 0 10px rgb(0, 81, 255), 0 0 10px rgb(0, 81, 255),
+                0 0 20px rgb(0, 81, 255), 0 0 50px rgb(0, 81, 255);
             font-size: 13px;
             width: 125px;
             height: 45px;
