@@ -63,7 +63,7 @@ section {
 
 .header .navbar a {
     font-size: 2rem;
-    padding: 2.8rem;
+    padding: 1.8rem;
     margin: 0 1rem;
     color: var(--black);
 }
@@ -676,7 +676,7 @@ section {
     width: 100%;
     padding: 20px 05px 05px 10px;
     outline: 0;
-    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-bottom: 1px solid rgba(105, 105, 105, 0.397);
     border-radius: 10px;
 }
 
