@@ -557,8 +557,13 @@ section{
    }
 
 }
-.admin_dash{
-   display: grid;
-   grid-template-columns: 2;
-   grid-template-rows: 1;
+
+.add-icon{
+   height: 3px;
+   width:  7px;
+   margin-left: 20px;
+   padding: 1px 3px;
+   background: var(--green);
+   color: white;
+   border-radius: 10%;
 }

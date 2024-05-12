@@ -57,8 +57,8 @@
         <!-- login form  -->
         <form action="login.php" class="login-form" id="signin" method="post">
             <h3>Login Now</h3>
-            <input type="email" placeholder="E Mail" name="mail" class="box" />
-            <input type="password" placeholder="Password" name="pwd" class="box" />
+            <input type="email" placeholder="E Mail" name="mail" class="box" required/>
+            <input type="password" placeholder="Password" name="pwd" class="box" required/>
             <p>forget your password <a href="mailto:adityasri1086@gmail.com">click here</a></p>
             <p>don't have an account <a href="register.php">create now</a></p>
             <input type="submit" value="login" class="btn" />
