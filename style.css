@@ -2,7 +2,7 @@
 :root {
     --green: #50C878;
     --black: #130f40;
-    --red:#dc3545;
+    --red: #dc3545;
     --light-color: #666;
     --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
     --border: 0.2rem solid rgba(0, 0, 0, 0.1);
@@ -588,7 +588,7 @@ section {
     justify-content: center;
     align-items: center;
     height: 90vh;
-    background-image: url('images/bgregister.avif');
+    background-image: url('images/groc4.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -781,6 +781,6 @@ section {
     justify-content: space-evenly;
 }
 
-#logout_btn_link{
+#logout_btn_link {
     color: var(--red);
 }

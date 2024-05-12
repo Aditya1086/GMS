@@ -6,15 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Form</title>
     <!-- <link rel="stylesheet" href="style.css"> -->
-    <?php include "./head.php";?>
+    <?php include "./head.php"; ?>
 </head>
 <?php
 include "./header.php";
 ?>
+
 <body class="register">
     <form class="form" action="signup.php">
         <h3>
-            <p class="title">Register </p><br></h3>
+            <p class="title">Register </p><br>
+        </h3>
         <p class="message">Signup now and get full access to our app. </p><br>
         <div class="flex">
             <label>
@@ -51,14 +53,15 @@ include "./header.php";
             <a href="index.html?id=signin"> <u>Login</u> </a>
         </p>
     </form>
-    
+
     <script>
         let mobile = document.getElementsByName("mobile")
-        mobile.addeventlistener("click", ()=>{
-            if(typeof(mobile.values) != "number"){
-            alert("Please Enter only Numbers in Mobile number Field")
-        }
+        mobile.addeventlistener("click", () => {
+            if (typeof (mobile.values) != "number") {
+                alert("Please Enter only Numbers in Mobile number Field")
+            }
         })
     </script>
 </body>
+
 </html>

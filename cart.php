@@ -12,7 +12,7 @@
         th {
             border: 1px solid black;
             border-collapse: collapse;
-            padding: 5px; 
+            padding: 5px;
         }
 
         .main {
@@ -109,7 +109,7 @@
     <div class="main">
         <h1>Cart</h1><br>
         <table>
-            <tr  bgcolor="#4682B4">
+            <tr bgcolor="#4682B4">
                 <th>Item Name</th>
                 <th>Price</th>
                 <th>Quantity</th>
@@ -122,12 +122,11 @@
                     <td>Rs. 100 /KG</td>
                     <td>5</td>
                     <td>
-                        
-                                  <a href="./edit.php"> <button
-                                    class="ui-btn1">Edit</button></a>
+
+                        <a href="./edit.php"> <button class="ui-btn1">Edit</button></a>
                     </td>
-                    <td> <a href="./delete.php"> <button
-                                    class="ui-btn">Delete</button></a>
+                    <td> <a href="./delete.php"> <button onclick="return confirm('Are you sure to Delete?');"
+                                class="ui-btn">Delete</button></a>
                     </td>
                 </tr>
         </table>
