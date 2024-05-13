@@ -57,7 +57,7 @@
         <!-- login form  -->
         <form action="login.php" class="login-form" id="signin" method="post">
             <h3>Login Now</h3>
-            <input type="email" placeholder="E Mail" name="mail" class="box" required/>
+            <input type="tel" maxlength="10" placeholder="Mobile" name="mobile" class="box" required/>
             <input type="password" placeholder="Password" name="pwd" class="box" required/>
             <p>forget your password <a href="mailto:adityasri1086@gmail.com">click here</a></p>
             <p>don't have an account <a href="register.php">create now</a></p>
@@ -66,5 +66,26 @@
 
     </header>
     <script src="script.js"></script>
+    <script>
+        // Function to validate mobile number input
+        function validateMobile(input) {
+            let numericInput = input.value.replace(/\D/g, ''); // Remove non-numeric characters
+            input.value = numericInput; // Update input value
+        }
+
+        // Function to restrict name fields to only accept letters and spaces
+        function restrictName(input) {
+            let validInput = input.value.replace(/[^a-zA-Z\s]/g, ''); // Remove non-alphabetic characters
+            input.value = validInput; // Update input value
+        }
+
+        // Apply validation to mobile number field
+        let mobileInput = document.querySelector('input[name="mobile"]');
+        mobileInput.addEventListener('input', function () {
+            validateMobile(this);
+        });
+
+        
+    </script>
 </body>
 </html>

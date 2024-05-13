@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 12, 2024 at 05:43 PM
+-- Generation Time: May 13, 2024 at 07:56 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -39,7 +39,8 @@ CREATE TABLE `category` (
 INSERT INTO `category` (`category_id`, `category_name`) VALUES
 (1, 'Vegetables'),
 (2, 'Dairy'),
-(3, 'Fruits');
+(3, 'Fruits'),
+(4, 'Packed Foods');
 
 -- --------------------------------------------------------
 
@@ -80,23 +81,22 @@ CREATE TABLE `user` (
   `fname` varchar(20) NOT NULL,
   `lname` varchar(20) NOT NULL,
   `pwd` varchar(20) NOT NULL,
-  `mobile` varchar(10) NOT NULL,
-  `mail` varchar(30) NOT NULL
+  `mobile` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`ID`, `fname`, `lname`, `pwd`, `mobile`, `mail`) VALUES
-(1, 'Aditya', 'Srivastava', '123456', '7235047914', ''),
-(2, 'Harsh', 'Sahu', '123456', '9120738474', ''),
-(3, 'Ashish ', 'Sahu', '123456', '9198113160', ''),
-(4, 'Aditya', 'Srivastava', '123456', '7235047914', 'aditya@gmail.com'),
-(5, 'Javed', 'Akhtar', '12345', '1234567892', ''),
-(6, 'Harsh ', 'Sahu', '12345', '1245684752', 'harsh@gmail.com'),
-(7, 'Admin', 'Admin', '123456', '7235047914', 'admin@gms.com'),
-(8, 'Aditya', 'Srivastava', '123456', '7235047914', '');
+INSERT INTO `user` (`ID`, `fname`, `lname`, `pwd`, `mobile`) VALUES
+(1, 'Aditya', 'Srivastava', '123456', '7235047914'),
+(2, 'Harsh', 'Sahu', '123456', '9120738474'),
+(3, 'Ashish ', 'Sahu', '123456', '9198113160'),
+(4, 'Aditya', 'Srivastava', '123456', '7235047914'),
+(5, 'Javed', 'Akhtar', '12345', '1234567892'),
+(6, 'Harsh ', 'Sahu', '12345', '1245684752'),
+(7, 'Admin', 'Admin', '123456', '7235047914'),
+(8, 'Aditya', 'Srivastava', '123456', '7235047914');
 
 --
 -- Indexes for dumped tables
@@ -128,7 +128,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `items`

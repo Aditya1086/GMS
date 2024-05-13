@@ -3,6 +3,7 @@
     --green: #50C878;
     --black: #130f40;
     --red: #dc3545;
+    --lavender:lavender;
     --light-color: #666;
     --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
     --border: 0.2rem solid rgba(0, 0, 0, 0.1);
@@ -783,4 +784,7 @@ section {
 
 #logout_btn_link {
     color: var(--red);
+}
+#edit_btn_link {
+    margin-left: 1vw;
 }

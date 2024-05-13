@@ -57,6 +57,7 @@ if(!isset($_SESSION["user_name"])){
             echo "<h1>Hello! ".$_SESSION['user_name']."<h1/>";
             ?>
              <a href="logout.php"  id="logout_btn_link" ><i class="fa-solid fa-power-off" ></i></a>
+             <a href="profile.php"  id="edit_btn_link" ><i class="fa-solid fa-edit" ></i></a>
         </form>
 
     </header>
