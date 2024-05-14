@@ -15,8 +15,8 @@
         <a href="" class="logo"><i class="fas fa-shopping-basket"></i> GMS</a>
 
         <nav class="navbar">
-            <a href="#home">Home</a>
-            <a href="#features">features</a>
+            <a href="./index.php">Home</a>
+            <a href="./index.php#features">features</a>
             <a href="#products">products</a>
             <a href="#categories">categories</a>
         </nav>
@@ -61,7 +61,7 @@
             <input type="password" placeholder="Password" name="pwd" class="box" required/>
             <p>forget your password <a href="mailto:adityasri1086@gmail.com">click here</a></p>
             <p>don't have an account <a href="register.php">create now</a></p>
-            <input type="submit" value="login" class="btn" />
+            <input type="submit" value="login" name="submit" class="btn" />
         </form>
 
     </header>

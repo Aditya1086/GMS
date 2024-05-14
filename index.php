@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php
-include "./head.php";
-?>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GMS</title>
+    <link rel="icon" href="./images/shopping-basket-solid.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+</head>
 <body>
    <?php
    include "./header.php";
+   include "./connect.php";
    ?>
     <section class="home" id="home">
         <div class="content">
@@ -38,78 +55,32 @@ include "./head.php";
         </div>
     </section>
 
-    <section class="products" id="products">
-        <h1 class="heading">our <span>products</span></h1>
-        <div class="swiper product-slider">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide box">
-                    <img src="images/products-1.png" alt="" />
-                    <h3>fresh oranges</h3>
-                    <div class="price">₹100-₹120/-</div>
-
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-
-                <div class="swiper-slide box">
-                    <img src="images/products-2.png" alt="" />
-                    <h3>fresh onion</h3>
-                    <div class="price">₹100-₹120/-</div>
-
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-
-                <div class="swiper-slide box">
-                    <img src="images/products-3.png" alt="" />
-                    <h3>watermelon</h3>
-                    <div class="price">₹100-₹120/-</div>
-
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-
-                <div class="swiper-slide box">
-                    <img src="images/products-4.png" alt="" />
-                    <h3>fresh cabbage</h3>
-                    <div class="price">₹100-₹120/-</div>
-
-                    <a href="#" class="btn">add to cart</a>
+    <section class="vegetables" id="vegetables">
+        <h1 class="heading"><span>Products</span></h1>
+        <div class="box-container">
+        <?php
+         $select_products = mysqli_query($conn, "SELECT * FROM `items`") or die('query failed');
+         $i=0;
+         if(mysqli_num_rows($select_products) > 0){
+            while($fetch_products = mysqli_fetch_assoc($select_products)){
+               
+      ?>    
+        <div class="box">
+                <img src="uploaded_img/<?php echo $fetch_products['Image']; ?>" alt="" style="width: 30rem; padding-top: 2.5rem" />
+                <h3><?php echo $fetch_products['Name']; ?></h3>
+                <p>₹ <?php echo $fetch_products['Price']; ?>/-</p>
+                <div class="btn-container">
+                   
+                    <a href="#" class="btn">Add to cart</a>
                 </div>
             </div>
-
-            <div class="swiper product-slider">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide box">
-                        <img src="images/products-5.png" alt="" />
-                        <h3>fresh potato</h3>
-                        <div class="price">₹100-₹120/-</div>
-
-                        <a href="#" class="btn">add to cart</a>
-                    </div>
-
-                    <div class="swiper-slide box">
-                        <img src="images/products-6.png" alt="" />
-                        <h3>fresh avocado</h3>
-                        <div class="price">₹100-₹120/-</div>
-
-                        <a href="#" class="btn">add to cart</a>
-                    </div>
-
-                    <div class="swiper-slide box">
-                        <img src="images/products-7.png" alt="" />
-                        <h3>fresh carrot</h3>
-                        <div class="price">₹100-₹120/-</div>
-
-                        <a href="#" class="btn">add to cart</a>
-                    </div>
-
-                    <div class="swiper-slide box">
-                        <img src="images/products-8.png" alt="" />
-                        <h3>green lemon</h3>
-                        <div class="price">₹100-₹120/-</div>
-
-                        <a href="#" class="btn">add to cart</a>
-                    </div>
-                </div>
-            </div>
+            <?php
+      
+        }
+      }else{
+         echo '<p class="heading">no products added yet!</p>';
+      }
+      ?>
         </div>
     </section>
 
@@ -126,13 +97,13 @@ include "./head.php";
                 <img src="images/cat-2.png" alt="" style="width: 30rem" />
                 <h3>fresh fruits</h3>
                 <p>upto 45% off</p>
-                <a href="#" class="btn">shop now</a>
+                <a href="./fruits.php" class="btn">shop now</a>
             </div>
             <div class="box">
                 <img src="images/cat-3.png" alt="" style="width: 30rem; padding-top: 2.5rem" />
                 <h3>dairy products</h3>
                 <p>upto 45% off</p>
-                <a href="#" class="btn">shop now</a>
+                <a href="./dairy.php" class="btn">shop now</a>
             </div>
 
         </div>

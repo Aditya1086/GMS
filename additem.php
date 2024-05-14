@@ -123,7 +123,7 @@ if(isset($_POST['add_item'])){
     $image = $_FILES['image']['name'];
     $image_size = $_FILES['image']['size'];
     $image_tmp_name = $_FILES['image']['tmp_name'];
-    $image_folder = 'images/'.$image;
+    $image_folder = 'uploaded_img/'.$image;
 
    
     
