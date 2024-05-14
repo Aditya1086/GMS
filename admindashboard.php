@@ -6,7 +6,30 @@
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./admin_style.css">
+    <style>
+        
+        table,
+        td,
+        tr,
+        th {
+            border: 3px solid #ccc;
+            
+            border-collapse: collapse;
+            padding: 5px;
+        }
+       
 
+        .main {
+
+            /* display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; */
+            font-size: larger;
+            padding-top: 10px;
+        }
+
+    </style>
     <?php include "./head.php";
      include "./connect.php";
     session_start();
@@ -84,6 +107,36 @@ if(!isset($admin_name)){
          ?>
          <h3><?php echo  $number_of_users; ?></h3>
          <p>Number Of Users </p>
+         <div class="main">
+        
+        <table style="width: 100%;">
+            <tr style="background-color:#f5f5f5 ; color:#50C878;">
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Mobile</th>
+               
+            </tr>
+             <?php
+             $select_products = mysqli_query($conn, "SELECT * FROM `user`") or die('query failed');
+             
+             if(mysqli_num_rows($select_products) > 0){
+                while($fetch_products = mysqli_fetch_assoc($select_products)){?>
+                <tr>
+                    <td><?php echo $fetch_products['fname']?></td>
+                    <td> <?php echo $fetch_products['lname']?></td>
+                    <td><?php echo $fetch_products['mobile']?></td>
+                
+                </tr>
+                <?php
+}
+      }else{
+         echo '<p class="heading">no products added yet!</p>';
+      }
+      ?>
+      
+        </table>
+        
+    </div>
 </div>
 
 <div class="box">
@@ -94,6 +147,36 @@ if(!isset($admin_name)){
          <h3><?php echo $number_of_categories; ?></h3>
          
          <p>Number Of Categories <a class="add-icon" href="./addcategory.php"><i class="fa-solid fa-plus"></i></a></p> 
+         <div class="main">
+        
+        <table style="width: 100%;">
+            <tr style="background-color:#f5f5f5 ; color:#50C878;">
+                <th>Category ID</th>
+                <th>Category Name</th>
+                
+               
+            </tr>
+             <?php
+             $select_products = mysqli_query($conn, "SELECT * FROM `category`") or die('query failed');
+             
+             if(mysqli_num_rows($select_products) > 0){
+                while($fetch_products = mysqli_fetch_assoc($select_products)){?>
+                <tr>
+                    <td><?php echo $fetch_products['category_id']?></td>
+                    <td> <?php echo $fetch_products['category_name']?></td>
+                   
+                
+                </tr>
+                <?php
+}
+      }else{
+         echo '<p class="heading">no products added yet!</p>';
+      }
+      ?>
+      
+        </table>
+        
+    </div>
          
          
 </div>
@@ -105,12 +188,44 @@ if(!isset($admin_name)){
          ?>
          <h3><?php echo $number_of_items; ?></h3>
          <p>Number Of Products   <a class="add-icon" href="./additem.php"><i class="fa-solid fa-plus"></i></a></p>
+         <div class="main">
+        
+        <table style="width: 100%;">
+            <tr style="background-color:#f5f5f5 ; color:#50C878;">
+                <th>Item Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+               
+            </tr>
+             <?php
+             $select_products = mysqli_query($conn, "SELECT * FROM `items`") or die('query failed');
+             
+             if(mysqli_num_rows($select_products) > 0){
+                while($fetch_products = mysqli_fetch_assoc($select_products)){?>
+                <tr>
+                    <td><?php echo $fetch_products['Name']?></td>
+                    <td>Rs. <?php echo $fetch_products['Price']?> /KG</td>
+                    <td><?php echo $fetch_products['Quantity']?></td>
+                
+                </tr>
+                <?php
+}
+      }else{
+         echo '<p class="heading">no products added yet!</p>';
+      }
+      ?>
+      
+        </table>
+        
+    </div>
+    
 </div>
    
 
 </div>
 
 </section>
+
 
 
 
