@@ -34,6 +34,7 @@
             <a href="#vegetables" class="btn">shop now</a>
         </div>
     </section>
+
     <section class="features" id="features">
         <h1 class="heading">our <span>features</span></h1>
         <div class="box-container">

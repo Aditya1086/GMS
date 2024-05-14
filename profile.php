@@ -20,6 +20,7 @@ if (!isset($_SESSION["user_name"])) {
     <main>
         <div class="container">
             <div class="left">
+                <a href="./home.php"><div class="back-btn"> <<< Back</div></a>
                 <div class="top-container">
                     <div class="image-container">
                         <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/profile-pic-male_4811a1.svg" alt="" style="height: 50px; width: 50px;">

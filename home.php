@@ -3,12 +3,15 @@
 <?php
 include "./head.php";
 session_start();
-if(!isset($_SESSION["user_name"])){
+if (!isset($_SESSION["user_name"])) {
     header("location:./index.php");
 }
 ?>
+
 <body>
-<header class="header">
+    <a href="" class="chat-icon"><img src="./images/whatsapp.png" alt="" ></a>
+
+    <header class="header">
         <a href="" class="logo"><i class="fas fa-shopping-basket"></i> GMS</a>
 
         <nav class="navbar">
@@ -23,6 +26,7 @@ if(!isset($_SESSION["user_name"])){
             <div class="fas fa-shopping-cart" id="cart-btn"></div>
             <div class="fas fa-user" id="login-btn"></div>
         </div>
+
         <form action="" class="search-form">
             <input type="text" id="search-box" placeholder="search here..." />
             <label for="search-box" class="fas fa-search"></label>
@@ -54,14 +58,14 @@ if(!isset($_SESSION["user_name"])){
         <!-- login form  -->
         <form class="login-form" id="signin" method="post">
             <?php
-            echo "<h1>Hello! ".$_SESSION['user_name']."<h1/>";
+            echo "<h1>Hello! " . $_SESSION['user_name'] . "<h1/>";
             ?>
-             <br><a href="profile.php"  id="edit_btn_link" ><i class="fa-solid fa-user" ></i> Profile</a>
-             <a href="logout.php"  id="logout_btn_link" ><i class="fa-solid fa-power-off" ></i> Logout</a>
+            <br><a href="profile.php" id="edit_btn_link"><i class="fa-solid fa-user"></i> Profile</a>
+            <a href="logout.php" id="logout_btn_link"><i class="fa-solid fa-power-off"></i> Logout</a>
         </form>
 
     </header>
-    
+
     <section class="home" id="home">
         <div class="content">
             <h3>fresh and <span>organic </span>Products for your</h3>
@@ -191,14 +195,14 @@ if(!isset($_SESSION["user_name"])){
 
         </div>
     </section>
-   
+
     <!---Footer Section-->
 
-   
+
     <?php
     include "./footer.php";
     ?>
-     <!---Footer Section-->
+    <!---Footer Section-->
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
