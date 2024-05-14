@@ -285,7 +285,7 @@ section {
 
 
 /*Footer css*/
-
+ 
 .footer {
     background: #fff;
 }
@@ -577,7 +577,7 @@ section {
 
 
 /* Registration Form! */
-
+/* 
 .register {
     height: 1700px;
     display: flex;
@@ -602,7 +602,6 @@ section {
     position: relative;
     background-color: #fff;
     color: #fff;
-    /* border: 2px solid #333; */
 }
 
 .title {
@@ -728,13 +727,13 @@ section {
         opacity: 0;
     }
 }
-
+ */
 
 /*<----------------------- Vegetable page ----------------------> */
 
 .vegetables .box-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 1.5rem;
 }
 

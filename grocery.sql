@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 14, 2024 at 02:27 PM
+-- Generation Time: May 14, 2024 at 06:31 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -43,19 +43,18 @@ CREATE TABLE `cart` (
 
 CREATE TABLE `category` (
   `category_id` int(11) NOT NULL,
-  `category_name` varchar(20) NOT NULL,
-  `Item_id` int(10) NOT NULL
+  `category_name` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `category`
 --
 
-INSERT INTO `category` (`category_id`, `category_name`, `Item_id`) VALUES
-(1, 'Vegetables', 0),
-(2, 'Dairy', 0),
-(3, 'Fruits', 0),
-(4, 'Packed Foods', 0);
+INSERT INTO `category` (`category_id`, `category_name`) VALUES
+(1, 'Vegetables'),
+(2, 'Dairy'),
+(3, 'Fruits'),
+(4, 'Packed Foods');
 
 -- --------------------------------------------------------
 
@@ -113,15 +112,13 @@ INSERT INTO `user` (`fname`, `lname`, `pwd`, `mobile`) VALUES
 -- Indexes for table `cart`
 --
 ALTER TABLE `cart`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `user_mobile` (`user_mobile`);
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Indexes for table `category`
 --
 ALTER TABLE `category`
-  ADD PRIMARY KEY (`category_id`),
-  ADD KEY `Item_id` (`Item_id`);
+  ADD PRIMARY KEY (`category_id`);
 
 --
 -- Indexes for table `items`
@@ -156,16 +153,6 @@ ALTER TABLE `category`
 --
 ALTER TABLE `items`
   MODIFY `ItemID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `cart`
---
-ALTER TABLE `cart`
-  ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`user_mobile`) REFERENCES `user` (`mobile`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
