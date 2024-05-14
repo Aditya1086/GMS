@@ -40,11 +40,11 @@ main .left .top-container {
     border-radius: 10px;
 }
 
-.hello {
+.name .hello {
     font-size: 17px;
 }
 
-.user-name {
+.name span {
     font-size: 25px;
 }
 
@@ -101,10 +101,8 @@ main .left .top-container {
 }
 
 .bottom-container .log_out-btn {
-    padding: 15px;
     font-size: 25px;
-    width: 100%;
-    height: 50px;
+    height: 40px;
     text-align: center;
 }
 

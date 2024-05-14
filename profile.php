@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+include "./head.php";
+session_start();
+if (!isset($_SESSION["user_name"])) {
+    header("location:./index.php");
+}
+?>
 
 <head>
     <meta charset="UTF-8">
@@ -19,18 +26,20 @@
                     </div>
                     <div class="name">
                         <span class="hello">HEllO,</span><br>
-                        <span class="user-name">Harsh Sahu</span>
+                        <?php
+                        echo "<span>".$_SESSION['user_name']."</span>";
+                        ?>
                     </div>
                 </div><br>
 
                 <div class="middle-container">
                     <div class="my-orders">
-                        <img src="download.svg" alt="" style="width: 25px;height: 25px; ">
+                        <div class="fas fa-shopping-cart" id="cart-btn"></div>
                         <a href="" style="margin-right: 60px;"><span>MY ORDERS </span></a>
                     </div>
                     <div class="account-settings">
                         <div class="box1">
-                            <img src="profile.svg" alt="" style="height: 25px;width: 25px;">
+                            <div class="fas fa-user" id="login-btn"></div>
                             <span>Account Settings</span>
                         </div>
                         <a href="#personal-info"><span class="account">Profile Information</span></a><br>
@@ -39,8 +48,8 @@
                 </div>
 
                 <div class="bottom-container">
-                    <a href="logout.php"  id="logout_btn_link">
-                        <div class="log_out-btn"><i class="fa-solid fa-power-off" ></i> Log out</div>
+                    <a href="logout.php" id="logout_btn_link">
+                        <div class="log_out-btn"><i class="fa-solid fa-power-off"></i> Log out</div>
                     </a>
                 </div>
             </div>
@@ -49,8 +58,8 @@
                 <div id="personal-info">
                     <h1>Personal Information </h1>
                     <div class="boxes-container">
-                        <input type="text" placeholder="First name" name="" id="" class="box" disabled>
-                        <input type="text" placeholder="Last name" name="" id="" class="box" disabled>
+                        <input type="text" placeholder="First name" name="fname" id="" class="box">
+                        <input type="text" placeholder="Last name" name="lname" id="" class="box">
                     </div>
                 </div>
                 <div class="email-add">
@@ -59,19 +68,19 @@
                 </div>
                 <div class="mobile-number">
                     <h1>Mobile Number </h1>
-                    <input type="number" placeholder="Mobile number" name="" id="" class="box" disabled>
+                    <input type="tel" placeholder="Mobile number" name="mobile" maxlength="10" class="box">
                 </div><br><br>
                 <div class="border-btm"></div><br><br>
                 <div class="addresses" id="address">
                     <h1>MANAGE ADDRESS </h1><br>
                     <div class="sections">
                         <div class="section-1">
-                            <input type="text" name="" placeholder="Name" id="" class="box" disabled>
-                            <input type="number" name="" placeholder="Mobile Number" maxlength="10" id="" class="box" disabled>
+                            <input type="text" name="fname" placeholder="Name" id="" class="box">
+                            <input type="tel" placeholder="Mobile number" name="mobile" maxlength="10" class="box">
                         </div>
 
                         <div class="section-2">
-                            <input type="number" name="" placeholder="Pin code" maxlength="6" id="" class="box" disabled>
+                            <input type="tel" name="mobile" placeholder="Pin code" maxlength="6" id="" class="box">
                             <input type="text" name="" placeholder="Locality" id="" class="box" disabled>
                         </div>
                     </div>
@@ -81,7 +90,7 @@
                     </div>
 
                     <div class="section-4">
-                        <input type="text" placeholder="City" name="" id="" class="box" disabled>
+                        <input type="text" placeholder="City" name="fname" id="" class="box">
                         <select name="" id="" class="box" disabled>
                             <option value="">Select State</option>
                             <option value="">Uttar Pradesh</option>
@@ -92,8 +101,8 @@
                     </div>
 
                     <div class="section-5">
-                        <input type="text" placeholder="Landmark" name="" id="" class="box" disabled>
-                        <input type="tel" placeholder="Alternate moblie number" name="" id="" class="box" disabled>
+                        <input type="text" placeholder="Landmark" name="" id="" class="box">
+                        <input type="tel" placeholder="Alternate moblie number" name="mobile" id="" class="box">
                     </div>
                 </div>
                 <div class="buttons">
@@ -108,6 +117,34 @@
     <?php
     include "./footer.php";
     ?>
+
+    <script>
+        // Function to validate mobile number input
+        function validateMobile(input) {
+            let numericInput = input.value.replace(/\D/g, ''); // Remove non-numeric characters
+            input.value = numericInput; // Update input value
+        }
+
+        // Function to restrict name fields to only accept letters and spaces
+        function restrictName(input) {
+            let validInput = input.value.replace(/[^a-zA-Z\s]/g, ''); // Remove non-alphabetic characters
+            input.value = validInput; // Update input value
+        }
+
+        // Apply validation to mobile number field
+        let mobileInput = document.querySelector('input[name="mobile"]');
+        mobileInput.addEventListener('input', function() {
+            validateMobile(this);
+        });
+
+        // Apply validation to name fields
+        let nameInputs = document.querySelectorAll('input[name="fname"], input[name="lname"]');
+        nameInputs.forEach(function(input) {
+            input.addEventListener('input', function() {
+                restrictName(this);
+            });
+        });
+    </script>
 </body>
 
 </html>

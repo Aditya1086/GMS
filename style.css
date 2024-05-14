@@ -164,6 +164,10 @@ section {
     height: 10rem;
 }
 
+#logout_btn_link{
+    margin-left: 20px;
+}
+
 .heading {
     text-align: center;
     padding: 2rem 0;

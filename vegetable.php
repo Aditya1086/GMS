@@ -35,7 +35,7 @@
                     <div class="box">
                         <img src="uploaded_img/<?php echo $fetch_products['Image']; ?>" alt="" style="width: 30rem; padding-top: 2.5rem" />
                         <h3><?php echo $fetch_products['Name']; ?></h3>
-                        <p>₹ <?php echo $fetch_products['Price']; ?>/-</p>
+                        <p>₹ <?php echo $fetch_products['Price']; ?>/KG</p>
                         <div class="btn-container">
 
                             <a href="#" class="btn">Add to cart</a>
