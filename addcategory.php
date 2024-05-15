@@ -38,7 +38,7 @@
     width: 16px;
     border-radius: 50%;
     left: 0px;
-    background-color: #f01e2c;
+    background-color: #50C878;
 }
 @keyframes pulse {
     from {
@@ -58,7 +58,7 @@
 <body>
     <div class="main">
     <div class="addcategory"> 
-    <form class="form" method="post">
+    <form class="form" method="post" action="categoryTable.php">
         <h3>
             <p class="title">Add Category </p><br></h3>
         <p class="message">Add Categories of Items. </p><br>
@@ -71,7 +71,7 @@
             <span>Category Name</span>
         </label>
       
-        <button class="submit" type="submit" name="add-category" style="background-color: #f01e2c;">Add Category</button>
+        <button class="submit" type="submit" name="add-category" style="background-color: #50C878;">Add Category</button>
  </div>
     </div>
 </body>

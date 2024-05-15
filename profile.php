@@ -26,7 +26,7 @@ if (!isset($_SESSION["user_name"])) {
                         <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/profile-pic-male_4811a1.svg" alt="" style="height: 50px; width: 50px;">
                     </div>
                     <div class="name">
-                        <span class="hello">HEllO,</span><br>
+                        <span class="hello">HELLO,</span><br>
                         <?php
                         echo "<span>".$_SESSION['user_name']."</span>";
                         ?>
