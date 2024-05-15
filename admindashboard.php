@@ -10,9 +10,9 @@
     <?php include "./head.php";
      include "./connect.php";
     session_start();
-    $admin_id = $_SESSION['admin_id'];
+    $admin_name = $_SESSION['admin_name'];
 
-if(!isset($admin_id)){
+if(!isset($admin_name)){
    header('location:login.php');
 }
     ?>
@@ -93,7 +93,7 @@ if(!isset($admin_id)){
          ?>
          <h3><?php echo $number_of_categories; ?></h3>
          
-         <p>Number Of Categories </p> 
+         <p>Number Of Categories <a class="add-icon" href="./addcategory.php"><i class="fa-solid fa-plus"></i></a></p> 
          
          
 </div>
@@ -104,7 +104,7 @@ if(!isset($admin_id)){
             $number_of_items = mysqli_num_rows($items);
          ?>
          <h3><?php echo $number_of_items; ?></h3>
-         <p>Number Of Products</p>
+         <p>Number Of Products   <a class="add-icon" href="./additem.php"><i class="fa-solid fa-plus"></i></a></p>
 </div>
    
 

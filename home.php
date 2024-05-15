@@ -3,12 +3,15 @@
 <?php
 include "./head.php";
 session_start();
-if(!isset($_SESSION["user_name"])){
+if (!isset($_SESSION["user_name"])) {
     header("location:./index.php");
 }
 ?>
+
 <body>
-<header class="header">
+    <a href="" class="chat-icon"><img src="./images/whatsapp.png" alt="" ></a>
+
+    <header class="header">
         <a href="" class="logo"><i class="fas fa-shopping-basket"></i> GMS</a>
 
         <nav class="navbar">
@@ -23,6 +26,7 @@ if(!isset($_SESSION["user_name"])){
             <div class="fas fa-shopping-cart" id="cart-btn"></div>
             <div class="fas fa-user" id="login-btn"></div>
         </div>
+
         <form action="" class="search-form">
             <input type="text" id="search-box" placeholder="search here..." />
             <label for="search-box" class="fas fa-search"></label>
@@ -54,20 +58,21 @@ if(!isset($_SESSION["user_name"])){
         <!-- login form  -->
         <form class="login-form" id="signin" method="post">
             <?php
-            echo "<h1>Hello! ".$_SESSION['user_name']."<h1/>";
+            echo "<h1>Hello! " . $_SESSION['user_name'] . "<h1/>";
             ?>
-             <a href="logout.php"  id="logout_btn_link" ><i class="fa-solid fa-power-off" ></i></a>
+            <br><a href="profile.php" id="edit_btn_link"><i class="fa-solid fa-user"></i> Profile</a>
+            <a href="logout.php" id="logout_btn_link"><i class="fa-solid fa-power-off"></i> Logout</a>
         </form>
 
     </header>
-    
+
     <section class="home" id="home">
         <div class="content">
             <h3>fresh and <span>organic </span>Products for your</h3>
             <p>
                 daily needs. Shop at our grocery website for a wide selection of high-quality fruits, vegetables, dairy, meat, and pantry items. We guarantee freshness and offer fast, reliable delivery to your doorstep. Start shopping today!
             </p>
-            <a href="#" class="btn">shop now</a>
+            <a href="#products" class="btn">shop now</a>
         </div>
     </section>
     <section class="features" id="features">
@@ -173,31 +178,31 @@ if(!isset($_SESSION["user_name"])){
                 <img src="images/cat-1.png" alt="" style="width: 30rem; padding-top: 6rem" />
                 <h3>vegetables</h3>
                 <p>upto 45% off</p>
-                <a href="vegetable.html" class="btn">shop now</a>
+                <a href="vegetable.php" class="btn">shop now</a>
             </div>
             <div class="box">
                 <img src="images/cat-2.png" alt="" style="width: 30rem" />
                 <h3>fresh fruits</h3>
                 <p>upto 45% off</p>
-                <a href="#" class="btn">shop now</a>
+                <a href="fruits.php" class="btn">shop now</a>
             </div>
             <div class="box">
                 <img src="images/cat-3.png" alt="" style="width: 30rem; padding-top: 2.5rem" />
                 <h3>dairy products</h3>
                 <p>upto 45% off</p>
-                <a href="#" class="btn">shop now</a>
+                <a href="dairy.php" class="btn">shop now</a>
             </div>
 
         </div>
     </section>
-   
+
     <!---Footer Section-->
 
-   
+
     <?php
     include "./footer.php";
     ?>
-     <!---Footer Section-->
+    <!---Footer Section-->
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 

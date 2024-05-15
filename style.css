@@ -3,6 +3,8 @@
     --green: #50C878;
     --black: #130f40;
     --red: #dc3545;
+    --lavender:lavender;
+    --white:white;
     --light-color: #666;
     --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
     --border: 0.2rem solid rgba(0, 0, 0, 0.1);
@@ -162,6 +164,10 @@ section {
     height: 10rem;
 }
 
+#logout_btn_link{
+    margin-left: 20px;
+}
+
 .heading {
     text-align: center;
     padding: 2rem 0;
@@ -282,8 +288,16 @@ section {
 }
 
 
-/*Footer css*/
+.chat-icon img{
+    width: 80px;
+    height: 70px;
+    position: fixed;
+    bottom: 10%;
+    right: 2%;
+}
 
+/*Footer css*/
+ 
 .footer {
     background: #fff;
 }
@@ -495,15 +509,14 @@ section {
     color: var(--light-color);
 }
 
-.products .product-slider {
+.products  .product-slider{
     padding: 1rem;
-}
-
-.products .product-slider:first-child {
+  }
+  .products  .product-slider:first-child{
     margin-bottom: 2rem;
-}
-
-.products .product-slider .box {
+  
+  }
+  .products  .product-slider .box{
     background: #fff;
     border-radius: .5rem;
     text-align: center;
@@ -512,33 +525,28 @@ section {
     outline: var(--outline);
     box-shadow: var(--box-shadow);
     transition: .2s linear;
-}
-
-.products .product-slider .box:hover {
+  }
+  .products  .product-slider .box:hover{
     outline-offset: 0rem;
     outline: var(--outline-hover);
-}
-
-.products .product-slider .box img {
+  }
+  .products  .product-slider .box img{
     height: 20rem;
-}
-
-.products .product-slider .box h3 {
+  }
+  .products  .product-slider .box h3{
     font-size: 2.5rem;
     color: var(--black);
-}
-
-.products .product-slider .box .price {
+  }
+  .products  .product-slider .box .price{
     font-size: 2rem;
     color: var(--light-color);
     padding: .5rem 0;
-}
-
-.products .product-slider .box .stars i {
+  }
+  .products  .product-slider .box .stars i{
     font-size: 1.7rem;
-    color: var(--green);
-    padding: .5rem 0;
-}
+    color: var(--orange);
+    padding:.5rem 0 ;
+  }
 
 .categories .box-container {
     display: grid;
@@ -581,7 +589,7 @@ section {
 
 
 /* Registration Form! */
-
+/* 
 .register {
     height: 1700px;
     display: flex;
@@ -606,7 +614,6 @@ section {
     position: relative;
     background-color: #fff;
     color: #fff;
-    /* border: 2px solid #333; */
 }
 
 .title {
@@ -732,13 +739,13 @@ section {
         opacity: 0;
     }
 }
-
+ */
 
 /*<----------------------- Vegetable page ----------------------> */
 
 .vegetables .box-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 1.5rem;
 }
 
@@ -784,3 +791,7 @@ section {
 #logout_btn_link {
     color: var(--red);
 }
+#edit_btn_link {
+    margin-left: 1vw;
+}
+

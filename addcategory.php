@@ -51,47 +51,39 @@
     }
 }
 .form{
-    width: 20vw;
-    height: 35vh;
-
+    height:auto;
 }
     </style>
 </head>
 <body>
     <div class="main">
     <div class="addcategory"> 
-    <form class="form" action="">
+    <form class="form" method="post">
         <h3>
             <p class="title">Add Category </p><br></h3>
         <p class="message">Add Categories of Items. </p><br>
-        <!-- <div class="flex">
-            <label>
-                <input class="input" type="text" placeholder="" required="" name="itemname">
-                <span>Item Name</span>
-            </label>
-
-            <label>
-                <input class="input" name="Quantity" type="number" placeholder="" required="">
-                <span>Quantity</span>
-            </label>
-        </div> -->
+      
 
         
 
         <label>
-            <input class="input" type="Text" name="" placeholder="" required=""   >
+            <input class="input" type="Text" name="category_name" placeholder="" required   >
             <span>Category Name</span>
         </label>
-        <!-- <label>
-            <input class="input" type="date" name="exp" placeholder="" required="">
-            <span>Expiry Date</span>
-        </label>
-        <label>
-            <input class="input" type="date" name="mfg" placeholder="" required="">
-            <span>Manufacturing Date</span>
-        </label><br>  -->
-        <button class="submit" style="background-color: #f01e2c;">Add Category</button>
+      
+        <button class="submit" type="submit" name="add-category" style="background-color: #f01e2c;">Add Category</button>
  </div>
     </div>
 </body>
 </html>
+<?php
+include "./connect.php";
+if(isset($_POST["add-category"])){
+$name=$_POST["category_name"];
+$select_category_name = mysqli_query($conn, "SELECT category_name FROM `category` WHERE category_name = '$name'") or die('select query failed');
+ 
+if(mysqli_num_rows($select_category_name) > 0){
+   $message[] = 'product name already added';
+}else{
+   $add_category_query = mysqli_query($conn, "INSERT INTO `category` VALUES('','$name')") or die('Insert query failed');}
+}?>
