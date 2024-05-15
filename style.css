@@ -164,6 +164,10 @@ section {
     height: 10rem;
 }
 
+#logout_btn_link{
+    margin-left: 20px;
+}
+
 .heading {
     text-align: center;
     padding: 2rem 0;
@@ -284,8 +288,16 @@ section {
 }
 
 
-/*Footer css*/
+.chat-icon img{
+    width: 80px;
+    height: 70px;
+    position: fixed;
+    bottom: 10%;
+    right: 2%;
+}
 
+/*Footer css*/
+ 
 .footer {
     background: #fff;
 }
@@ -577,7 +589,7 @@ section {
 
 
 /* Registration Form! */
-
+/* 
 .register {
     height: 1700px;
     display: flex;
@@ -602,7 +614,6 @@ section {
     position: relative;
     background-color: #fff;
     color: #fff;
-    /* border: 2px solid #333; */
 }
 
 .title {
@@ -728,13 +739,13 @@ section {
         opacity: 0;
     }
 }
-
+ */
 
 /*<----------------------- Vegetable page ----------------------> */
 
 .vegetables .box-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 1.5rem;
 }
 

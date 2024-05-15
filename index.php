@@ -31,9 +31,10 @@
             <p>
                 daily needs. Shop at our grocery website for a wide selection of high-quality fruits, vegetables, dairy, meat, and pantry items. We guarantee freshness and offer fast, reliable delivery to your doorstep. Start shopping today!
             </p>
-            <a href="#" class="btn">shop now</a>
+            <a href="#vegetables" class="btn">shop now</a>
         </div>
     </section>
+
     <section class="features" id="features">
         <h1 class="heading">our <span>features</span></h1>
         <div class="box-container">
@@ -56,7 +57,7 @@
     </section>
 
     <section class="vegetables" id="vegetables">
-        <h1 class="heading"><span>Products</span></h1>
+        <h1 class="heading">Our<span>Products</span></h1>
         <div class="box-container">
         <?php
          $select_products = mysqli_query($conn, "SELECT * FROM `items`") or die('query failed');
