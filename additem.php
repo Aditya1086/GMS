@@ -42,7 +42,7 @@
     width: 16px;
     border-radius: 50%;
     left: 0px;
-    background-color: #50C878;
+    background-color: skyblue;
 }
 @keyframes pulse {
     from {
@@ -97,7 +97,7 @@
             <span>Category</span>
         </label>
         <br>
-        <button class="submit" type="submit" style="background-color: #50C878;" value="add_item" name="add_item">Add Item</button>
+        <button class="submit" type="submit" style="background-color: skyblue;" value="add_item" name="add_item">Add Item</button>
  </div> 
 </body>
 </html>

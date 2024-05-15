@@ -1,8 +1,8 @@
 <?php
 session_start();
-$uname = $_SESSION['user_name'];
+$uname=$_SESSION['user_name'];
 
-if (!isset($uname)) {
+if(!isset($uname)){
     header("location:./index.php");
 }
 
@@ -20,10 +20,9 @@ if (!isset($uname)) {
         td,
         tr,
         th {
-            border: 3px solid black;
+            border: 1px solid black;
             border-collapse: collapse;
             padding: 5px;
-            border-color: black;
         }
 
         .main {
@@ -43,8 +42,8 @@ if (!isset($uname)) {
             border-style: solid;
             background-color: transparent;
             border-color: rgb(219, 218, 218);
-            width: 90px;
-            height: 30px;
+            width: 120px;
+            height: 40px;
             transition: 0.2s ease;
             text-transform: uppercase;
             border-width: 2px;
@@ -61,8 +60,8 @@ if (!isset($uname)) {
             box-shadow: 0 0 10px rgb(202, 25, 25), 0 0 10px rgb(202, 25, 25),
                 0 0 20px rgb(202, 25, 25), 0 0 50px rgb(202, 25, 25);
             font-size: 13px;
-            width: 100px;
-            height: 40px;
+            width: 125px;
+            height: 45px;
             letter-spacing: 3px;
         }
 
@@ -80,8 +79,8 @@ if (!isset($uname)) {
             border-style: solid;
             background-color: transparent;
             border-color: rgb(219, 218, 218);
-            width: 90px;
-            height: 30px;
+            width: 120px;
+            height: 40px;
             transition: 0.2s ease;
             text-transform: uppercase;
             border-width: 2px;
@@ -98,8 +97,8 @@ if (!isset($uname)) {
             box-shadow: 0 0 10px rgb(0, 81, 255), 0 0 10px rgb(0, 81, 255),
                 0 0 20px rgb(0, 81, 255), 0 0 50px rgb(0, 81, 255);
             font-size: 13px;
-            width: 100px;
-            height: 40px;
+            width: 125px;
+            height: 45px;
             letter-spacing: 3px;
         }
 
