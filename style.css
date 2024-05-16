@@ -283,7 +283,13 @@ section {
     text-decoration: underline;
 }
 
-
+.chat-icon img{
+    width: 80px;
+    height: 70px;
+    position: fixed;
+    bottom: 10%;
+    right: 2%;
+}
 /*Footer css*/
 
 .footer {
