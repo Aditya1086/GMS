@@ -1,8 +1,8 @@
 <?php
 session_start();
-$uname=$_SESSION['user_name'];
+$uname = $_SESSION['user_name'];
 
-if(!isset($uname)){
+if (!isset($uname)) {
     header("location:./index.php");
 }
 
@@ -10,11 +10,19 @@ if(!isset($uname)){
 
 <!DOCTYPE html>
 <html lang="en">
+<?php
+include "./head.php";
+include "./connect.php";
+session_start();
+if (!isset($_SESSION["user_name"])) {
+    header("location:./index.php");
+}
+?>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cart</title>
     <style>
         table,
         td,
@@ -26,7 +34,6 @@ if(!isset($uname)){
         }
 
         .main {
-
             display: flex;
             justify-content: center;
             align-items: center;
@@ -109,9 +116,7 @@ if(!isset($uname)){
         }
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -135,14 +140,14 @@ if(!isset($uname)){
 
                         <a href="./edit.php"> <button class="ui-btn1">Edit</button></a>
                     </td>
-                    <td> <a href="./delete.php"> <button onclick="return confirm('Are you sure to Delete?');"
-                                class="ui-btn">Delete</button></a>
+                    <td> <a href="./delete.php"> <button onclick="return confirm('Are you sure to Delete?');" class="ui-btn">Delete</button></a>
                     </td>
                 </tr>
         </table>
         </h4>
     </div>
 
+    <script src="cart.js"></script>
 </body>
 
 </html>

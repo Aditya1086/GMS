@@ -24,6 +24,7 @@
             <div class="fas fa-bars" id="menu-btn"></div>
             <div class="fas fa-search" id="search-btn"></div>
             <div class="fas fa-shopping-cart" id="cart-btn"></div>
+            <span class="cart-count">0</span>
             <div class="fas fa-user" id="login-btn"></div>
         </div>
         <form action="" class="search-form">

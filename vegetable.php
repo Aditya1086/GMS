@@ -36,9 +36,9 @@
                         <img src="uploaded_img/<?php echo $fetch_products['Image']; ?>" alt="" style="width: 30rem; padding-top: 2.5rem" />
                         <h3><?php echo $fetch_products['Name']; ?></h3>
                         <p>₹ <?php echo $fetch_products['Price']; ?>/KG</p>
+                        <!-- <?php echo $fetch_products['ItemID']; ?> -->
                         <div class="btn-container">
-
-                            <a href="#" class="btn">Add to cart</a>
+                            <a href="#" class="btn" onclick="addToCart(<?php echo $fetch_products['ItemID']; ?>)">Add to cart</a>
                         </div>
                     </div>
             <?php
@@ -53,6 +53,7 @@
     <?php
     include "./footer.php";
     ?>
+    <script src="cart.js"></script>
 </body>
 
 </html>
