@@ -14,7 +14,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    
+    background-image: url('images/groc1.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -38,7 +38,7 @@
     width: 16px;
     border-radius: 50%;
     left: 0px;
-    background-color: #f01e2c;
+    background-color: #50C87;
 }
 @keyframes pulse {
     from {
@@ -51,7 +51,9 @@
     }
 }
 .form{
-    height:auto;
+    height: 350px;
+    width: 300px;
+    bottom: 100px;
 }
     </style>
 </head>
@@ -62,16 +64,12 @@
         <h3>
             <p class="title">Add Category </p><br></h3>
         <p class="message">Add Categories of Items. </p><br>
-      
-
-        
-
         <label>
             <input class="input" type="Text" name="category_name" placeholder="" required   >
             <span>Category Name</span>
         </label>
       
-        <button class="submit" type="submit" name="add-category" style="background-color: #f01e2c;">Add Category</button>
+        <br><button class="submit" type="submit" name="add-category" style="background-color: #50C87;">Add Category</button>
  </div>
     </div>
 </body>
