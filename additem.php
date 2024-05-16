@@ -19,9 +19,13 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-image: url('images/groc2.jpg');
+
 }
 .form{
     height:auto;
+    bottom: 35px;
+    padding-bottom: 40px;
 }
 .title::before {
     width: 18px;
@@ -42,7 +46,7 @@
     width: 16px;
     border-radius: 50%;
     left: 0px;
-    background-color: skyblue;
+    background-color: #50C87;
 }
 @keyframes pulse {
     from {
@@ -97,7 +101,7 @@
             <span>Category</span>
         </label>
         <br>
-        <button class="submit" type="submit" style="background-color: skyblue;" value="add_item" name="add_item">Add Item</button>
+        <button class="submit" type="submit" style="background-color: #50C87;" value="add_item" name="add_item">Add Item</button>
  </div> 
 </body>
 </html>
