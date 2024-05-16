@@ -15,7 +15,7 @@
         <div class="box-container">
             <div class="box">
                 <h3> GMS <i class="fa fa-shopping-basket"></i></h3>
-                <p>Feel Free To Follow Us On Our Social Media Handles <br> All The Links Are Given Below.</p>
+                <p>Feel Free To Follow Us On Our <br>Social Media Handles <br> All The Links Are Given Below.</p>
                 <div class="share">
                     <a href="#" class="fa-brands fa-facebook"></a>
                     <a href="#" class="fa-brands fa-twitter"></a>
@@ -31,11 +31,11 @@
                 <a href="#" class="links"><i class="fa fa-map-marker"></i>Varanasi, India</a>
             </div>
             <div class="box">
-                <h3> Quick Links </h3>
-                <a href="./index.php" class="links"><i class=""></i>&#x1f3e0 Home</a>
-                <a href="./index.php #features" class="links"><i class=""></i>&#128722 Features</a>
-                <a href="./index.php #vegetables" class="links"><i class=""></i>&#128717 Products</a>
-                <a href="./index.php #categories" class="links"><i class=""></i>&#128230 Categories</a>
+                <h3> Developed by</h3>
+                <a href="https://wa.me/917235047914" target="blank" class="links"><i class="fa fa-user"></i>Aditya Srivastava</a>
+                <a href="https://wa.me/919120738474" target="blank" class="links"><i class="fa fa-user"></i>Harsh Sahu</a>
+                <a href="https://wa.me/919198113160" target="blank" class="links"><i class="fa fa-user"></i>Ashish Sahu</a>
+                <a href="https://wa.me/919628801687" target="blank" class="links"><i class="fa fa-user"></i>Javed Akhtar</a>
 
             </div>
             <div class="box">

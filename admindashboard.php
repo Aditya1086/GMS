@@ -44,23 +44,18 @@ if(!isset($admin_name)){
   <header class="header" style="position: sticky;">
         <a href="" class="logo"><i class="fas fa-shopping-basket"></i> GMS</a>
 
-        <nav class="navbar">
-            <a href="#home">Home</a>
-            <a href="#features">features</a>
-            <a href="#products">products</a>
-            <a href="#categories">categories</a>
-        </nav>
+        
         <div class="icons">
             <div class="fas fa-bars" id="menu-btn"></div>
-            <div class="fas fa-search" id="search-btn"></div>
-            <div class="fas fa-shopping-cart" id="cart-btn"></div>
+            <div class="fas fa-search" id="search-btn" style="opacity:0;cursor:auto;"></div>
+            <div class="fas fa-shopping-cart" id="cart-btn" style="opacity:0;cursor:auto;"></div>
             <div class="fas fa-user" id="login-btn"></div>
         </div>
         <form action="" class="search-form">
             <input type="text" id="search-box" placeholder="search here..." />
             <label for="search-box" class="fas fa-search"></label>
         </form>
-        <div class="shopping-cart">
+        <!-- <div class="shopping-cart">
             <div class="box">
                 <i class="fas fa-trash"></i>
                 <img src="images/products-3.png" alt="" />
@@ -82,14 +77,14 @@ if(!isset($admin_name)){
 
             <div class="total">total: ₹190/-</div>
             <a href="#" class="btn">check out</a>
-        </div>
+        </div> -->
 
        <!-- login form -->
                <form class="login-form" id="signin" method="post">
              <?php
             echo "<h1>Hello! ".$_SESSION['admin_name']."<h1/>";
             ?> 
-           <a href="logout.php"  id="logout_btn_link" ><i class="fa-solid fa-power-off" ></i></a>
+                  <a href="logout.php" id="logout_btn_link"><i class="fa-solid fa-power-off"></i> Logout</a>
         </form>
 
     </header> 
@@ -231,9 +226,9 @@ if(!isset($admin_name)){
 
 
 
-  <?php
+  <!-- <?php
 include "./footer.php";
-?>
+?> -->
 <script src="./script.js"></script>
 </body>
 

@@ -2,6 +2,7 @@
 <html lang="en">
 <?php
 include "./head.php";
+include "./connect.php";
 session_start();
 if (!isset($_SESSION["user_name"])) {
     header("location:./index.php");
@@ -9,7 +10,7 @@ if (!isset($_SESSION["user_name"])) {
 ?>
 
 <body>
-    <a href="" class="chat-icon"><img src="./images/whatsapp.png" alt="" ></a>
+    <a href="https://wa.me/919120738474" class="chat-icon" target="blank"><img src="./images/whatsapp.png" alt="" ></a>
 
     <header class="header">
         <a href="" class="logo"><i class="fas fa-shopping-basket"></i> GMS</a>
@@ -96,78 +97,32 @@ if (!isset($_SESSION["user_name"])) {
         </div>
     </section>
 
-    <section class="products" id="products">
-        <h1 class="heading">our <span>products</span></h1>
-        <div class="swiper product-slider">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide box">
-                    <img src="images/products-1.png" alt="" />
-                    <h3>fresh oranges</h3>
-                    <div class="price">₹100-₹120/-</div>
-
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-
-                <div class="swiper-slide box">
-                    <img src="images/products-2.png" alt="" />
-                    <h3>fresh onion</h3>
-                    <div class="price">₹100-₹120/-</div>
-
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-
-                <div class="swiper-slide box">
-                    <img src="images/products-3.png" alt="" />
-                    <h3>watermelon</h3>
-                    <div class="price">₹100-₹120/-</div>
-
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-
-                <div class="swiper-slide box">
-                    <img src="images/products-4.png" alt="" />
-                    <h3>fresh cabbage</h3>
-                    <div class="price">₹100-₹120/-</div>
-
-                    <a href="#" class="btn">add to cart</a>
+    <section class="vegetables" id="vegetables">
+        <h1 class="heading">Our<span>Products</span></h1>
+        <div class="box-container">
+        <?php
+         $select_products = mysqli_query($conn, "SELECT * FROM `items`") or die('query failed');
+         $i=0;
+         if(mysqli_num_rows($select_products) > 0){
+            while($fetch_products = mysqli_fetch_assoc($select_products)){
+               
+      ?>    
+        <div class="box">
+                <img src="uploaded_img/<?php echo $fetch_products['Image']; ?>" alt="" style="width: 30rem; padding-top: 2.5rem" />
+                <h3><?php echo $fetch_products['Name']; ?></h3>
+                <p>₹ <?php echo $fetch_products['Price']; ?>/-</p>
+                <div class="btn-container">
+                   
+                    <a href="#" class="btn">Add to cart</a>
                 </div>
             </div>
-
-            <div class="swiper product-slider">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide box">
-                        <img src="images/products-5.png" alt="" />
-                        <h3>fresh potato</h3>
-                        <div class="price">₹100-₹120/-</div>
-
-                        <a href="#" class="btn">add to cart</a>
-                    </div>
-
-                    <div class="swiper-slide box">
-                        <img src="images/products-6.png" alt="" />
-                        <h3>fresh avocado</h3>
-                        <div class="price">₹100-₹120/-</div>
-
-                        <a href="#" class="btn">add to cart</a>
-                    </div>
-
-                    <div class="swiper-slide box">
-                        <img src="images/products-7.png" alt="" />
-                        <h3>fresh carrot</h3>
-                        <div class="price">₹100-₹120/-</div>
-
-                        <a href="#" class="btn">add to cart</a>
-                    </div>
-
-                    <div class="swiper-slide box">
-                        <img src="images/products-8.png" alt="" />
-                        <h3>green lemon</h3>
-                        <div class="price">₹100-₹120/-</div>
-
-                        <a href="#" class="btn">add to cart</a>
-                    </div>
-                </div>
-            </div>
+            <?php
+      
+        }
+      }else{
+         echo '<p class="heading">no products added yet!</p>';
+      }
+      ?>
         </div>
     </section>
 

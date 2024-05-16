@@ -26,7 +26,7 @@ if (!isset($_SESSION["user_name"])) {
                         <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/profile-pic-male_4811a1.svg" alt="" style="height: 50px; width: 50px;">
                     </div>
                     <div class="name">
-                        <span class="hello">HEllO,</span><br>
+                        <span class="hello">HELLO,</span><br>
                         <?php
                         echo "<span>".$_SESSION['user_name']."</span>";
                         ?>
@@ -63,10 +63,10 @@ if (!isset($_SESSION["user_name"])) {
                         <input type="text" placeholder="Last name" name="lname" id="" class="box">
                     </div>
                 </div>
-                <div class="email-add">
+                <!-- <div class="email-add">
                     <h1>Email Address </h1>
                     <input type="email" placeholder="E-mail Id" name="" id="" class="box" disabled>
-                </div>
+                </div> -->
                 <div class="mobile-number">
                     <h1>Mobile Number </h1>
                     <input type="tel" placeholder="Mobile number" name="mobile" maxlength="10" class="box">
