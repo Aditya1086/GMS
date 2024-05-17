@@ -31,16 +31,17 @@
             $select_products = mysqli_query($conn, "SELECT * FROM `items` where Category='Vegetables'") or die('query failed');
             if (mysqli_num_rows($select_products) > 0) {
                 while ($fetch_products = mysqli_fetch_assoc($select_products)) {
-            ?>
+            ?>      <form action="./cart.php" method="get">
                     <div class="box">
                         <img src="uploaded_img/<?php echo $fetch_products['Image']; ?>" alt="" style="width: 30rem; padding-top: 2.5rem" />
                         <h3><?php echo $fetch_products['Name']; ?></h3>
                         <p>₹ <?php echo $fetch_products['Price']; ?>/KG</p>
-                        <!-- <?php //echo $fetch_products['ItemID']; ?> -->
+                       <?php $itemid = $fetch_products['ItemID'];?> 
                         <div class="btn-container">
-                            <a href="#" class="btn" onclick="addToCart(<?php echo $fetch_products['ItemID']; ?>)">Add to cart</a>
+                            <button type="submit" name="cart"><a href="./cart.php?itemid=<?php echo $itemid ?>" class="btn" onclick="addToCart(<?php echo $fetch_products['ItemID']; ?>)">Add to cart</a></button>
                         </div>
                     </div>
+                    </form>
             <?php
                 }
             } else {

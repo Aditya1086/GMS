@@ -1,3 +1,4 @@
+export
 let bagItems;
 let bagItemsStr = localStorage.getItem('bagItems');
 bagItems = bagItemsStr ? JSON.parse(bagItemsStr) : [];
@@ -18,6 +19,6 @@ function displayBagItemCount() {
     } else {
         bagItemCountElement.style.visibility = 'hidden';
     }
-    // console.log(bagItems);
+
 }
-localStorage.removeItem('bagItems'); //Removing product
+// localStorage.removeItem('bagItems'); //Removing product
