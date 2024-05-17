@@ -1,12 +1,11 @@
-
 let bagItems;
 let bagItemsStr = localStorage.getItem('bagItems');
 bagItems = bagItemsStr ? JSON.parse(bagItemsStr) : [];
 displayBagItemCount();
 
 
-function addToCart(name) {
-    bagItems.push(name);
+function addToCart(id) {
+    bagItems.push(id);
     localStorage.setItem('bagItems', JSON.stringify(bagItems));
     displayBagItemCount();
 }
