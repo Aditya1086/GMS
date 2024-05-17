@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 $uname=$_SESSION['user_name'];
@@ -7,141 +8,88 @@ if(!isset($uname)){
 }
 
 ?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        table,
-        td,
-        tr,
-        th {
-            border: 1px solid black;
-            border-collapse: collapse;
-            padding: 5px;
-        }
-
-        .main {
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            font-size: larger;
-            padding-top: 100px;
-        }
-
-        .ui-btn {
-            cursor: pointer;
-            border-radius: 5px;
-            color: black;
-            border-style: solid;
-            background-color: transparent;
-            border-color: rgb(219, 218, 218);
-            width: 120px;
-            height: 40px;
-            transition: 0.2s ease;
-            text-transform: uppercase;
-            border-width: 2px;
-            font-weight: 500;
-            font-size: 11px;
-            letter-spacing: 2px;
-        }
-
-        .ui-btn:hover {
-            color: rgb(247, 247, 247);
-            background-color: rgb(202, 25, 25);
-            border-color: rgb(202, 25, 25);
-            text-shadow: 0 0 10px white, 0 0 20px white, 0 0 15px white;
-            box-shadow: 0 0 10px rgb(202, 25, 25), 0 0 10px rgb(202, 25, 25),
-                0 0 20px rgb(202, 25, 25), 0 0 50px rgb(202, 25, 25);
-            font-size: 13px;
-            width: 125px;
-            height: 45px;
-            letter-spacing: 3px;
-        }
-
-        .ui-btn:active {
-            width: 110px;
-            height: 36px;
-            letter-spacing: 0px;
-        }
+    <title>Cart Table</title>
 
 
-        .ui-btn1 {
-            cursor: pointer;
-            border-radius: 5px;
-            color: black;
-            border-style: solid;
-            background-color: transparent;
-            border-color: rgb(219, 218, 218);
-            width: 120px;
-            height: 40px;
-            transition: 0.2s ease;
-            text-transform: uppercase;
-            border-width: 2px;
-            font-weight: 500;
-            font-size: 11px;
-            letter-spacing: 2px;
-        }
 
-        .ui-btn1:hover {
-            color: rgb(247, 247, 247);
-            background-color: rgb(0, 81, 255);
-            border-color: rgb(0, 81, 255);
-            text-shadow: 0 0 50px white, 0 0 20px white, 0 0 15px white;
-            box-shadow: 0 0 10px rgb(0, 81, 255), 0 0 10px rgb(0, 81, 255),
-                0 0 20px rgb(0, 81, 255), 0 0 50px rgb(0, 81, 255);
-            font-size: 13px;
-            width: 125px;
-            height: 45px;
-            letter-spacing: 3px;
-        }
+    <link rel="stylesheet" href="cart.css">
 
-        .ui-btn1:active {
-            width: 110px;
-            height: 36px;
-            letter-spacing: 0px;
-        }
-    </style>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css" />
+
 </head>
 
 <body>
-    <div class="main">
-        <h1>Cart</h1><br>
-        <table>
-            <tr bgcolor="#4682B4">
+    <h1><u>Cart</u></h1>
+    <table>
+        <thead>
+            <tr>
                 <th>Item Name</th>
                 <th>Price</th>
                 <th>Quantity</th>
                 <th>Action1</th>
                 <th>Action2</th>
             </tr>
-            <h4>
-                <tr>
-                    <td>Onion</td>
-                    <td>Rs. 100 /KG</td>
-                    <td>5</td>
-                    <td>
+            <thead>
+                <tbody>
+                    <tr>
+                        <td>Onion</td>
+                        <td>Rs. 100 /KG</td>
+                        <td>5</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
 
-                        <a href="./edit.php"> <button class="ui-btn1">Edit</button></a>
-                    </td>
-                    <td> <a href="./delete.php"> <button onclick="return confirm('Are you sure to Delete?');"
-                                class="ui-btn">Delete</button></a>
-                    </td>
-                </tr>
-        </table>
-        </h4>
-    </div>
+                </tbody>
+    </table>
+
+    <!-- <blockquote> Responsive Table </blockquote> -->
+
 
 </body>
 
