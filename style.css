@@ -790,3 +790,17 @@ section {
     margin-left: 1vw;
 }
 
+/* Cart Count */
+
+.cart-count{
+    background-color: #50C878;
+    text-align: center;
+    padding: 0px 6px;
+    border-radius: 50%;
+    height: 180px;
+    font-size: 12px;
+    font-weight: 700;
+    position: relative;
+    top: -20px;
+    right: 13%;
+}

@@ -10,7 +10,7 @@ if (!isset($_SESSION["user_name"])) {
 ?>
 
 <body>
-    <a href="https://wa.me/919120738474" class="chat-icon" target="blank"><img src="./images/whatsapp.png" alt="" ></a>
+    <a href="https://wa.me/919120738474" class="chat-icon" target="blank"><img src="./images/whatsapp.png" alt=""></a>
 
     <header class="header">
         <a href="" class="logo"><i class="fas fa-shopping-basket"></i> GMS</a>
@@ -25,6 +25,7 @@ if (!isset($_SESSION["user_name"])) {
             <div class="fas fa-bars" id="menu-btn"></div>
             <div class="fas fa-search" id="search-btn"></div>
             <div class="fas fa-shopping-cart" id="cart-btn"></div>
+            <span class="cart-count">0</span>
             <div class="fas fa-user" id="login-btn"></div>
         </div>
 
@@ -100,29 +101,27 @@ if (!isset($_SESSION["user_name"])) {
     <section class="vegetables" id="vegetables">
         <h1 class="heading">Our<span>Products</span></h1>
         <div class="box-container">
-        <?php
-         $select_products = mysqli_query($conn, "SELECT * FROM `items`") or die('query failed');
-         $i=0;
-         if(mysqli_num_rows($select_products) > 0){
-            while($fetch_products = mysqli_fetch_assoc($select_products)){
-               
-      ?>    
-        <div class="box">
-                <img src="uploaded_img/<?php echo $fetch_products['Image']; ?>" alt="" style="width: 30rem; padding-top: 2.5rem" />
-                <h3><?php echo $fetch_products['Name']; ?></h3>
-                <p>₹ <?php echo $fetch_products['Price']; ?>/-</p>
-                <div class="btn-container">
-                   
-                    <a href="#" class="btn">Add to cart</a>
-                </div>
-            </div>
             <?php
-      
-        }
-      }else{
-         echo '<p class="heading">no products added yet!</p>';
-      }
-      ?>
+            $select_products = mysqli_query($conn, "SELECT * FROM `items`") or die('query failed');
+            $i = 0;
+            if (mysqli_num_rows($select_products) > 0) {
+                while ($fetch_products = mysqli_fetch_assoc($select_products)) {
+
+            ?>
+                    <div class="box">
+                        <img src="uploaded_img/<?php echo $fetch_products['Image']; ?>" alt="" style="width: 30rem; padding-top: 2.5rem" />
+                        <h3><?php echo $fetch_products['Name']; ?></h3>
+                        <p>₹ <?php echo $fetch_products['Price']; ?>/-</p>
+                        <div class="btn-container">
+                            <a href="" onclick="addToCart(<?php $fetch_products['Name']; ?>)" class="btn">Add to cart</a>
+                        </div>
+                    </div>
+            <?php
+                }
+            } else {
+                echo '<p class="heading">no products added yet!</p>';
+            }
+            ?>
         </div>
     </section>
 
@@ -162,6 +161,7 @@ if (!isset($_SESSION["user_name"])) {
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
     <script src="script.js"></script>
+    <script src="cart.js"></script>
 </body>
 
 </html>

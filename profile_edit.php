@@ -12,7 +12,7 @@ if (!isset($_SESSION["user_name"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title>Profile Edit</title>
     <link rel="stylesheet" href="profile.css">
 </head>
 
@@ -55,21 +55,14 @@ if (!isset($_SESSION["user_name"])) {
                     </a>
                 </div>
             </div>
-            <?php
-            $user_mobile = $_SESSION['user_mobile'];
-         $select_users = mysqli_query($conn, "SELECT * FROM `user` where mobile='$user_mobile'") or die('query failed');
-          $fetch_users = mysqli_fetch_assoc($select_users) ;
          
-       
-       
-     ?>
-        <form action="#" method="post">
+        <form action="#" method="post" >
             <div class="right">
                 <div id="personal-info">
                     <h1>Personal Information </h1>
                     <div class="boxes-container">
-                        <input type="text" placeholder="First name" name="fname" id="" class="box" value="<?php echo $fetch_users['fname'];?>" disabled>
-                        <input type="text" placeholder="Last name" name="lname" id="" class="box" value="<?php echo $fetch_users['lname'];?>" disabled>
+                        <input type="text" placeholder="First name" name="fname" id="" class="box" required>
+                        <input type="text" placeholder="Last name" name="lname" id="" class="box"  required>
                     </div>
                 </div>
                 <!-- <div class="email-add">
@@ -78,21 +71,47 @@ if (!isset($_SESSION["user_name"])) {
                 </div> -->
                 <div class="mobile-number">
                     <h1>Mobile Number </h1>
-                    <input type="tel" placeholder="Mobile number" name="mobile" maxlength="10" class="box" value="<?php echo $fetch_users['mobile'];?>" disabled>
+                    <input type="tel" placeholder="Mobile number" name="mobile" maxlength="10" class="box" required>
                 </div><br><br>
-                <a  href="./profile_edit.php" style="margin-bottom: 5px;" id="edit" class="save btn btns" value="edit" name="edit"><i class="fa fa-edit"  > </i> Edit</a>
+                <button type="submit" style="margin-bottom: 5px;" id="save" class="save btn btns" value="save" name="save"><i class="fas fa-save"  > </i> save</button>
                 </form>
+                <?php
+                       
+                       if(isset($_REQUEST['save'])){
+                          $fname = $_POST["fname"];
+                          $lname = $_POST["lname"];
+                          $mobile = $_POST["mobile"];
+                          
+                         
+
+                          $select_users = mysqli_query($conn, "SELECT * FROM `user` WHERE `mobile` = '$mobile'") or die('query failed');
+          
+                          if(mysqli_num_rows($select_users) == 1){
+                              echo "<h1 class='heading' style='color:red;'>Mobile Number already Present in Database.</h1>";
+                          }
+                         else{
+                            
+                            $user_mobile = $_SESSION["user_mobile"];
+                          $query="UPDATE `user` SET `fname` = '$fname',`lname` = '$lname' ,`mobile` = '$mobile' WHERE `user`.`mobile` = '$user_mobile';";
+                          mysqli_query($conn,$query);
+                          $_SESSION['user_mobile'] = $mobile;
+                          header("location:./profile.php");
+                         }
+          
+                          
+                       }
+                          ?>
                 <div class="border-btm"></div><br><br>
                 <div class="addresses" id="address">
                     <h1>MANAGE ADDRESS </h1><br>
                     <div class="sections">
                         <div class="section-1">
-                            <input type="text" name="fname" placeholder="Name" id="" class="box">
-                            <input type="tel" placeholder="Mobile number" name="mobile" maxlength="10" class="box">
+                            <input type="text" name="" placeholder="Name" id="" class="box">
+                            <input type="tel" placeholder="Mobile number" name="" maxlength="10" class="box">
                         </div>
 
                         <div class="section-2">
-                            <input type="tel" name="mobile" placeholder="Pin code" maxlength="6" id="" class="box">
+                            <input type="tel" name="" placeholder="Pin code" maxlength="6" id="" class="box">
                             <input type="text" name="" placeholder="Locality" id="" class="box" disabled>
                         </div>
                     </div>
@@ -102,7 +121,7 @@ if (!isset($_SESSION["user_name"])) {
                     </div>
 
                     <div class="section-4">
-                        <input type="text" placeholder="City" name="fname" id="" class="box">
+                        <input type="text" placeholder="City" name=" " id="" class="box">
                         <select name="" id="" class="box" disabled>
                             <option value="">Select State</option>
                             <option value="">Uttar Pradesh</option>
@@ -114,7 +133,7 @@ if (!isset($_SESSION["user_name"])) {
 
                     <div class="section-5">
                         <input type="text" placeholder="Landmark" name="" id="" class="box">
-                        <input type="tel" placeholder="Alternate moblie number" name="mobile" id="" class="box">
+                        <input type="tel" placeholder="Alternate moblie number" name="" id="" class="box">
                     </div>
                 </div>
                 <div class="buttons">
