@@ -5,8 +5,9 @@ session_start();
 
 if(isset($_REQUEST['submit'])){
 
-    $mobile = mysqli_real_escape_string($conn,($_REQUEST['mobile']));
-    $pass = mysqli_real_escape_string($conn, ($_REQUEST['pwd']));
+    $mobile =mysqli_real_escape_string($conn,$_POST['mobile']);
+    $pass = mysqli_real_escape_string($conn,$_POST['pwd']);
+   
  
     $query = mysqli_query($conn, "SELECT * FROM user WHERE mobile = '$mobile' AND pwd = '$pass'") ;
  
@@ -29,10 +30,10 @@ if(isset($_REQUEST['submit'])){
           header('location:home.php');
  
        }}
-    }
-    else{
-      header("location:./index.php");
-    }
+       else{
+          header("location:failed.php");
+         }
+      }
 
 
 

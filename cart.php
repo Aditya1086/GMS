@@ -10,7 +10,7 @@ if (!isset($_SESSION["user_name"])) {
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>Responsive Table</title>
+  <title>Cart</title>
   
   
   
@@ -27,13 +27,16 @@ if (!isset($_SESSION["user_name"])) {
           <th>item Name</th>
           <th>Price</th>
           <th>Quantity</th>
-          <th>Action1</th>
+          
           <th>Action2</th>
         </tr>
       <thead>
       <tbody>
       <?php
       $itemid=$_GET["itemid"];
+      
+
+     
 
          $select_products = mysqli_query($conn, "SELECT * FROM `items` where ItemID='$itemid'") or die('query failed');
          
@@ -51,8 +54,8 @@ if (!isset($_SESSION["user_name"])) {
                
       ?> 
      <?php
-         $select_products = mysqli_query($conn, "SELECT * FROM `cart`") or die('query failed');
-         $i=0;
+         $select_products = mysqli_query($conn, "SELECT * FROM `cart` ") or die('query failed');
+         
          if(mysqli_num_rows($select_products) > 0){
             while($fetch_products = mysqli_fetch_assoc($select_products)){
                
@@ -61,12 +64,18 @@ if (!isset($_SESSION["user_name"])) {
           <td> <?php echo $fetch_products["item_name"] ?> </td>
           <td><?php echo $fetch_products["price"]?> </td>
           <td>1</td>
-          <td> edit </td>
-          <td>delete </td>
+         <?php  $product_id = $fetch_products["ID"];?>
+          <td><a href="cart-delete.php?product_id=<?php echo  $product_id?>">delete <i class="fas fa-trash"></i></a> </td>
         </tr>
+        
         <?php
+       
       
     }
+     echo " <div class='btn-container'>
+                            <button type='submit' name='cart'><a href='home.php' class='btn' >Add More Products <i class='fa-solid fa-plus'></i></a></button>
+                        </div>";
+
   }else{
      echo '<p class="heading">no products added yet!</p>';
   }
@@ -74,21 +83,18 @@ if (!isset($_SESSION["user_name"])) {
         <?php
       
         }
+        
+        
       else{
          echo '<p class="heading">no products added yet!</p>';
       }
-      ?>
-  </tbody>
-</table>
-      <?php 
+    
+    
       
+?>
+
       
-      ?>
-      
-    <script type="module" src="./cart.js">
-      import bagitems ;
-  console.log(bagitems);
-    </script>
+   
   
   
 </body>

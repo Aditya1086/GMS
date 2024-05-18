@@ -3,11 +3,13 @@
 include "./connect.php";
 if (isset($_REQUEST["submit"])) {
 
-    $fname = mysqli_real_escape_string($conn, $_REQUEST['fname']);
-    $lname = mysqli_real_escape_string($conn, $_REQUEST['lname']);
-    $pwd = mysqli_real_escape_string($conn, $_REQUEST['pwd']);
-    $pwd2 = mysqli_real_escape_string($conn, $_REQUEST['cpwd']);
-    $mobile = mysqli_real_escape_string($conn, $_REQUEST['mobile']);
+    $fname =  mysqli_real_escape_string($conn,$_POST['fname']);
+    $lname =  mysqli_real_escape_string($conn,$_POST['lname']);
+    $pwd = mysqli_real_escape_string($conn,($_POST['pwd']));
+    
+    $pwd2 = mysqli_real_escape_string($conn,($_POST['cpwd']));
+  
+    $mobile =  mysqli_real_escape_string($conn,$_POST['mobile']);
 
     $select_users = mysqli_query($conn, "SELECT * FROM `user` WHERE mobile = '$mobile' AND pwd = '$pwd'") or die('query failed');
 
@@ -44,7 +46,7 @@ if (isset($_REQUEST["submit"])) {
     if (isset($message)) {
         foreach ($message as $message) {
             echo '
-      <div class="message">
+      <div class="heading">
          <span>' . $message . '</span>
          <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
       </div>

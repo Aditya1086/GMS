@@ -23,7 +23,7 @@ if (!isset($_SESSION["user_name"])) {
         </nav>
         <div class="icons">
             <div class="fas fa-bars" id="menu-btn"></div>
-            <div class="fas fa-search" id="search-btn"></div>
+            <div class="fas fa-search"  style="opacity: 0;cursor:auto;" id="search-btn"></div>
             <div class="fas fa-shopping-cart" id="cart-btn"></div>
             <span class="cart-count">0</span>
             <div class="fas fa-user" id="login-btn"></div>
@@ -112,8 +112,9 @@ if (!isset($_SESSION["user_name"])) {
                         <img src="uploaded_img/<?php echo $fetch_products['Image']; ?>" alt="" style="width: 30rem; padding-top: 2.5rem" />
                         <h3><?php echo $fetch_products['Name']; ?></h3>
                         <p>₹ <?php echo $fetch_products['Price']; ?>/-</p>
+                        <?php $itemid = $fetch_products['ItemID'];?> 
                         <div class="btn-container">
-                            <a href="" onclick="addToCart(<?php $fetch_products['Name']; ?>)" class="btn">Add to cart</a>
+                        <button type="submit" name="cart"><a href="./cart.php?itemid=<?php echo $itemid ?>" class="btn" onclick="addToCart(<?php echo $fetch_products['ItemID']; ?>)">Add to cart</a></button>
                         </div>
                     </div>
             <?php

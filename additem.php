@@ -111,9 +111,11 @@ if(isset($_POST['add_item'])){
    
     $today = date("Y-m-d");
     if (($today > $_POST['mfg']))  {
-    echo "<h1 style='color:red'>Manufacturing Date should not be in the future</h1>";
+    echo "<h1 style='color:red' class='heading'>Manufacturing Date should not be in the future</h1>";
+    header("refresh:3; url=./additem.php");
     }elseif(($_POST['exp'] > $_POST['mfg'])){
-    echo "<h1 style='color:red'>Manufacturing Date should not be Expiry Date</h1>";
+    echo "<h1 style='color:red' class='heading'>Manufacturing Date should not be Expiry Date</h1>";
+    header("refresh:3; url=./additem.php");
     }
         
 
@@ -144,10 +146,10 @@ if(isset($_POST['add_item'])){
              $message[] = 'image size is too large';
           }else{
              move_uploaded_file($image_tmp_name, $image_folder);
-             $message[] = 'product added successfully!';
+             echo 'product added successfully!';
           }
        }else{
-          $message[] = 'product could not be added!';
+          echo 'product could not be added!';
        }
     }
  }

@@ -89,7 +89,7 @@ if (isset($_POST["add-category"])) {
     $select_category_name = mysqli_query($conn, "SELECT category_name FROM `category` WHERE category_name = '$name'") or die('select query failed');
 
     if (mysqli_num_rows($select_category_name) > 0) {
-        $message[] = 'product name already added';
+       echo "<h1 style='color:red' class='heading'>'product name already added'</h1>";
     } else {
         $add_category_query = mysqli_query($conn, "INSERT INTO `category` VALUES('','$name')") or die('Insert query failed');
     }

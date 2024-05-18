@@ -22,7 +22,7 @@
         </nav>
         <div class="icons">
             <div class="fas fa-bars" id="menu-btn"></div>
-            <div class="fas fa-search" id="search-btn"></div>
+            <div class="fas fa-search"  style="opacity: 0;cursor:auto;" id="search-btn"></div>
             <div class="fas fa-shopping-cart" id="cart-btn"></div>
             <span class="cart-count">0</span>
             <div class="fas fa-user" id="login-btn"></div>
@@ -67,6 +67,7 @@
 
     </header>
     <script src="script.js"></script>
+    <script src="cart.js"></script>
     <script>
         // Function to validate mobile number input
         function validateMobile(input) {
