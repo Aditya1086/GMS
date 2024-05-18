@@ -34,7 +34,7 @@ if (!isset($_SESSION["user_name"])) {
       <thead>
       <tbody>
         <?php
-        $itemid = $_GET["ItemID"];
+        $itemid = $_GET["itemid"];
 
 
 

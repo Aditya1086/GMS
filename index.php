@@ -72,7 +72,7 @@
                 <p>₹ <?php echo $fetch_products['Price']; ?>/-</p>
                 <div class="btn-container">
                    
-                    <a href="#" class="btn" disabled>Add to cart</a>
+                    <a class="btn" disabled onclick="alert('Login First')">Add to cart</a>
                 </div>
             </div>
             <?php

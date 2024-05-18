@@ -86,17 +86,18 @@ if (!isset($_SESSION["user_name"])) {
 
                           $select_users = mysqli_query($conn, "SELECT * FROM `user` WHERE `mobile` = '$mobile'") or die('query failed');
           
-                          if(mysqli_num_rows($select_users) == 1){
-                              echo "<h1 class='heading' style='color:red;'>Mobile Number already Present in Database.</h1>";
-                          }
-                         else{
+                        //   if(mysqli_num_rows($select_users) == 1){
+                        //       echo "<h1 class='heading' style='color:red;'>Mobile Number already Present in Database.</h1>";
+                        //   }
+                        //  else{
                             
                             $user_mobile = $_SESSION["user_mobile"];
                           $query="UPDATE `user` SET `fname` = '$fname',`lname` = '$lname' ,`mobile` = '$mobile' WHERE `user`.`mobile` = '$user_mobile';";
                           mysqli_query($conn,$query);
                           $_SESSION['user_mobile'] = $mobile;
+                          $_SESSION['user_name'] = $fname;
                           header("location:./profile.php");
-                         }
+                        //  }
           
                           
                        }

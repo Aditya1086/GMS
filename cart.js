@@ -1,4 +1,3 @@
-export
 let bagItems;
 let bagItemsStr = localStorage.getItem('bagItems');
 bagItems = bagItemsStr ? JSON.parse(bagItemsStr) : [];

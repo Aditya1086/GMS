@@ -133,7 +133,7 @@ if (!isset($_SESSION["user_name"])) {
     <script>
         // Function to validate mobile number input
         function validateMobile(input) {
-            let numericInput = input.value.replace(/\D/g, ''); // Remove non-numeric characters
+            let numericInput = input.value.replace(/\b/g, ''); // Remove non-numeric characters
             input.value = numericInput; // Update input value
         }
 

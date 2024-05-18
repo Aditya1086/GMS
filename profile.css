@@ -28,7 +28,7 @@ main .left {
     margin-bottom: auto;
 }
 
-.back-btn{
+.back-btn {
     font-size: 16px;
     font-weight: 800;
     color: rgb(239, 41, 41);
@@ -125,10 +125,9 @@ main .left .top-container {
     color: black;
 }
 
-
 main .right {
     padding: 15px;
-    width: 70%;
+    /* width: 70%; */
     background-color: white;
     border-radius: 10px;
     border: 2px dotted #50C878;
@@ -169,7 +168,7 @@ textarea {
     margin-left: 10px;
 }
 
-.btns:hover{
+.btns:hover {
     color: white;
     border: 2px solid white;
 }
